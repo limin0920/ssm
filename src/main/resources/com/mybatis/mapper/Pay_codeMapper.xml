@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.icss.dao.Pay_codeMapper" >
+  <resultMap id="BaseResultMap" type="com.icss.bean.Pay_code" >
+    <id column="cid" property="cid" jdbcType="INTEGER" />
+    <result column="uid" property="uid" jdbcType="INTEGER" />
+    <result column="ctype" property="ctype" jdbcType="VARCHAR" />
+    <result column="cstime" property="cstime" jdbcType="DATE" />
+    <result column="cctime" property="cctime" jdbcType="DATE" />
+    <result column="cdepartment" property="cdepartment" jdbcType="VARCHAR" />
+    <result column="conesale" property="conesale" jdbcType="VARCHAR" />
+    <result column="ctwosale" property="ctwosale" jdbcType="VARCHAR" />
+    <result column="cpay" property="cpay" jdbcType="INTEGER" />
+    <result column="cif" property="cif" jdbcType="VARCHAR" />
+    <result column="chostel" property="chostel" jdbcType="INTEGER" />
+    <result column="carea" property="carea" jdbcType="VARCHAR" />
+    <result column="cremark" property="cremark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    cid, uid, ctype, cstime, cctime, cdepartment, conesale, ctwosale, cpay, cif, chostel, 
+    carea, cremark
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from pay_code
+    where cid = #{cid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from pay_code
+    where cid = #{cid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.icss.bean.Pay_code" >
+    insert into pay_code (cid, uid, ctype, 
+      cstime, cctime, cdepartment, 
+      conesale, ctwosale, cpay, 
+      cif, chostel, carea, 
+      cremark)
+    values (#{cid,jdbcType=INTEGER}, #{uid,jdbcType=INTEGER}, #{ctype,jdbcType=VARCHAR}, 
+      #{cstime,jdbcType=DATE}, #{cctime,jdbcType=DATE}, #{cdepartment,jdbcType=VARCHAR}, 
+      #{conesale,jdbcType=VARCHAR}, #{ctwosale,jdbcType=VARCHAR}, #{cpay,jdbcType=INTEGER}, 
+      #{cif,jdbcType=VARCHAR}, #{chostel,jdbcType=INTEGER}, #{carea,jdbcType=VARCHAR}, 
+      #{cremark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.icss.bean.Pay_code" >
+    insert into pay_code
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="cid != null" >
+        cid,
+      </if>
+      <if test="uid != null" >
+        uid,
+      </if>
+      <if test="ctype != null" >
+        ctype,
+      </if>
+      <if test="cstime != null" >
+        cstime,
+      </if>
+      <if test="cctime != null" >
+        cctime,
+      </if>
+      <if test="cdepartment != null" >
+        cdepartment,
+      </if>
+      <if test="conesale != null" >
+        conesale,
+      </if>
+      <if test="ctwosale != null" >
+        ctwosale,
+      </if>
+      <if test="cpay != null" >
+        cpay,
+      </if>
+      <if test="cif != null" >
+        cif,
+      </if>
+      <if test="chostel != null" >
+        chostel,
+      </if>
+      <if test="carea != null" >
+        carea,
+      </if>
+      <if test="cremark != null" >
+        cremark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="cid != null" >
+        #{cid,jdbcType=INTEGER},
+      </if>
+      <if test="uid != null" >
+        #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="ctype != null" >
+        #{ctype,jdbcType=VARCHAR},
+      </if>
+      <if test="cstime != null" >
+        #{cstime,jdbcType=DATE},
+      </if>
+      <if test="cctime != null" >
+        #{cctime,jdbcType=DATE},
+      </if>
+      <if test="cdepartment != null" >
+        #{cdepartment,jdbcType=VARCHAR},
+      </if>
+      <if test="conesale != null" >
+        #{conesale,jdbcType=VARCHAR},
+      </if>
+      <if test="ctwosale != null" >
+        #{ctwosale,jdbcType=VARCHAR},
+      </if>
+      <if test="cpay != null" >
+        #{cpay,jdbcType=INTEGER},
+      </if>
+      <if test="cif != null" >
+        #{cif,jdbcType=VARCHAR},
+      </if>
+      <if test="chostel != null" >
+        #{chostel,jdbcType=INTEGER},
+      </if>
+      <if test="carea != null" >
+        #{carea,jdbcType=VARCHAR},
+      </if>
+      <if test="cremark != null" >
+        #{cremark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.icss.bean.Pay_code" >
+    update pay_code
+    <set >
+      <if test="uid != null" >
+        uid = #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="ctype != null" >
+        ctype = #{ctype,jdbcType=VARCHAR},
+      </if>
+      <if test="cstime != null" >
+        cstime = #{cstime,jdbcType=DATE},
+      </if>
+      <if test="cctime != null" >
+        cctime = #{cctime,jdbcType=DATE},
+      </if>
+      <if test="cdepartment != null" >
+        cdepartment = #{cdepartment,jdbcType=VARCHAR},
+      </if>
+      <if test="conesale != null" >
+        conesale = #{conesale,jdbcType=VARCHAR},
+      </if>
+      <if test="ctwosale != null" >
+        ctwosale = #{ctwosale,jdbcType=VARCHAR},
+      </if>
+      <if test="cpay != null" >
+        cpay = #{cpay,jdbcType=INTEGER},
+      </if>
+      <if test="cif != null" >
+        cif = #{cif,jdbcType=VARCHAR},
+      </if>
+      <if test="chostel != null" >
+        chostel = #{chostel,jdbcType=INTEGER},
+      </if>
+      <if test="carea != null" >
+        carea = #{carea,jdbcType=VARCHAR},
+      </if>
+      <if test="cremark != null" >
+        cremark = #{cremark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where cid = #{cid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.icss.bean.Pay_code" >
+    update pay_code
+    set uid = #{uid,jdbcType=INTEGER},
+      ctype = #{ctype,jdbcType=VARCHAR},
+      cstime = #{cstime,jdbcType=DATE},
+      cctime = #{cctime,jdbcType=DATE},
+      cdepartment = #{cdepartment,jdbcType=VARCHAR},
+      conesale = #{conesale,jdbcType=VARCHAR},
+      ctwosale = #{ctwosale,jdbcType=VARCHAR},
+      cpay = #{cpay,jdbcType=INTEGER},
+      cif = #{cif,jdbcType=VARCHAR},
+      chostel = #{chostel,jdbcType=INTEGER},
+      carea = #{carea,jdbcType=VARCHAR},
+      cremark = #{cremark,jdbcType=VARCHAR}
+    where cid = #{cid,jdbcType=INTEGER}
+  </update>
+</mapper>

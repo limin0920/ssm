@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.icss.dao.Add_persMapper" >
+  <resultMap id="BaseResultMap" type="com.icss.bean.Add_pers" >
+    <id column="pid" property="pid" jdbcType="INTEGER" />
+    <result column="p_name" property="pName" jdbcType="VARCHAR" />
+    <result column="p_sex" property="pSex" jdbcType="VARCHAR" />
+    <result column="p_cardid" property="pCardid" jdbcType="VARCHAR" />
+    <result column="did" property="did" jdbcType="INTEGER" />
+    <result column="p_education" property="pEducation" jdbcType="VARCHAR" />
+    <result column="p_card" property="pCard" jdbcType="VARCHAR" />
+    <result column="p_loginid" property="pLoginid" jdbcType="VARCHAR" />
+    <result column="p_password" property="pPassword" jdbcType="VARCHAR" />
+    <result column="p_part" property="pPart" jdbcType="VARCHAR" />
+    <result column="p_Mariage" property="pMariage" jdbcType="VARCHAR" />
+    <result column="p_address" property="pAddress" jdbcType="VARCHAR" />
+    <result column="p_tel" property="pTel" jdbcType="VARCHAR" />
+    <result column="p_qq" property="pQq" jdbcType="VARCHAR" />
+    <result column="p_pos" property="pPos" jdbcType="VARCHAR" />
+    <result column="p_remark" property="pRemark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    pid, p_name, p_sex, p_cardid, did, p_education, p_card, p_loginid, p_password, p_part, 
+    p_Mariage, p_address, p_tel, p_qq, p_pos, p_remark
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from add_pers
+    where pid = #{pid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from add_pers
+    where pid = #{pid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.icss.bean.Add_pers" >
+    insert into add_pers (pid, p_name, p_sex, 
+      p_cardid, did, p_education, 
+      p_card, p_loginid, p_password, 
+      p_part, p_Mariage, p_address, 
+      p_tel, p_qq, p_pos, p_remark
+      )
+    values (#{pid,jdbcType=INTEGER}, #{pName,jdbcType=VARCHAR}, #{pSex,jdbcType=VARCHAR}, 
+      #{pCardid,jdbcType=VARCHAR}, #{did,jdbcType=INTEGER}, #{pEducation,jdbcType=VARCHAR}, 
+      #{pCard,jdbcType=VARCHAR}, #{pLoginid,jdbcType=VARCHAR}, #{pPassword,jdbcType=VARCHAR}, 
+      #{pPart,jdbcType=VARCHAR}, #{pMariage,jdbcType=VARCHAR}, #{pAddress,jdbcType=VARCHAR}, 
+      #{pTel,jdbcType=VARCHAR}, #{pQq,jdbcType=VARCHAR}, #{pPos,jdbcType=VARCHAR}, #{pRemark,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.icss.bean.Add_pers" >
+    insert into add_pers
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="pid != null" >
+        pid,
+      </if>
+      <if test="pName != null" >
+        p_name,
+      </if>
+      <if test="pSex != null" >
+        p_sex,
+      </if>
+      <if test="pCardid != null" >
+        p_cardid,
+      </if>
+      <if test="did != null" >
+        did,
+      </if>
+      <if test="pEducation != null" >
+        p_education,
+      </if>
+      <if test="pCard != null" >
+        p_card,
+      </if>
+      <if test="pLoginid != null" >
+        p_loginid,
+      </if>
+      <if test="pPassword != null" >
+        p_password,
+      </if>
+      <if test="pPart != null" >
+        p_part,
+      </if>
+      <if test="pMariage != null" >
+        p_Mariage,
+      </if>
+      <if test="pAddress != null" >
+        p_address,
+      </if>
+      <if test="pTel != null" >
+        p_tel,
+      </if>
+      <if test="pQq != null" >
+        p_qq,
+      </if>
+      <if test="pPos != null" >
+        p_pos,
+      </if>
+      <if test="pRemark != null" >
+        p_remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="pid != null" >
+        #{pid,jdbcType=INTEGER},
+      </if>
+      <if test="pName != null" >
+        #{pName,jdbcType=VARCHAR},
+      </if>
+      <if test="pSex != null" >
+        #{pSex,jdbcType=VARCHAR},
+      </if>
+      <if test="pCardid != null" >
+        #{pCardid,jdbcType=VARCHAR},
+      </if>
+      <if test="did != null" >
+        #{did,jdbcType=INTEGER},
+      </if>
+      <if test="pEducation != null" >
+        #{pEducation,jdbcType=VARCHAR},
+      </if>
+      <if test="pCard != null" >
+        #{pCard,jdbcType=VARCHAR},
+      </if>
+      <if test="pLoginid != null" >
+        #{pLoginid,jdbcType=VARCHAR},
+      </if>
+      <if test="pPassword != null" >
+        #{pPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="pPart != null" >
+        #{pPart,jdbcType=VARCHAR},
+      </if>
+      <if test="pMariage != null" >
+        #{pMariage,jdbcType=VARCHAR},
+      </if>
+      <if test="pAddress != null" >
+        #{pAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="pTel != null" >
+        #{pTel,jdbcType=VARCHAR},
+      </if>
+      <if test="pQq != null" >
+        #{pQq,jdbcType=VARCHAR},
+      </if>
+      <if test="pPos != null" >
+        #{pPos,jdbcType=VARCHAR},
+      </if>
+      <if test="pRemark != null" >
+        #{pRemark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.icss.bean.Add_pers" >
+    update add_pers
+    <set >
+      <if test="pName != null" >
+        p_name = #{pName,jdbcType=VARCHAR},
+      </if>
+      <if test="pSex != null" >
+        p_sex = #{pSex,jdbcType=VARCHAR},
+      </if>
+      <if test="pCardid != null" >
+        p_cardid = #{pCardid,jdbcType=VARCHAR},
+      </if>
+      <if test="did != null" >
+        did = #{did,jdbcType=INTEGER},
+      </if>
+      <if test="pEducation != null" >
+        p_education = #{pEducation,jdbcType=VARCHAR},
+      </if>
+      <if test="pCard != null" >
+        p_card = #{pCard,jdbcType=VARCHAR},
+      </if>
+      <if test="pLoginid != null" >
+        p_loginid = #{pLoginid,jdbcType=VARCHAR},
+      </if>
+      <if test="pPassword != null" >
+        p_password = #{pPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="pPart != null" >
+        p_part = #{pPart,jdbcType=VARCHAR},
+      </if>
+      <if test="pMariage != null" >
+        p_Mariage = #{pMariage,jdbcType=VARCHAR},
+      </if>
+      <if test="pAddress != null" >
+        p_address = #{pAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="pTel != null" >
+        p_tel = #{pTel,jdbcType=VARCHAR},
+      </if>
+      <if test="pQq != null" >
+        p_qq = #{pQq,jdbcType=VARCHAR},
+      </if>
+      <if test="pPos != null" >
+        p_pos = #{pPos,jdbcType=VARCHAR},
+      </if>
+      <if test="pRemark != null" >
+        p_remark = #{pRemark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where pid = #{pid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.icss.bean.Add_pers" >
+    update add_pers
+    set p_name = #{pName,jdbcType=VARCHAR},
+      p_sex = #{pSex,jdbcType=VARCHAR},
+      p_cardid = #{pCardid,jdbcType=VARCHAR},
+      did = #{did,jdbcType=INTEGER},
+      p_education = #{pEducation,jdbcType=VARCHAR},
+      p_card = #{pCard,jdbcType=VARCHAR},
+      p_loginid = #{pLoginid,jdbcType=VARCHAR},
+      p_password = #{pPassword,jdbcType=VARCHAR},
+      p_part = #{pPart,jdbcType=VARCHAR},
+      p_Mariage = #{pMariage,jdbcType=VARCHAR},
+      p_address = #{pAddress,jdbcType=VARCHAR},
+      p_tel = #{pTel,jdbcType=VARCHAR},
+      p_qq = #{pQq,jdbcType=VARCHAR},
+      p_pos = #{pPos,jdbcType=VARCHAR},
+      p_remark = #{pRemark,jdbcType=VARCHAR}
+    where pid = #{pid,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectPerInfo" resultMap="BaseResultMap">
+  	 select 
+    <include refid="Base_Column_List" />
+    from add_pers  where p_password is NULL 
+  </select>
+  <update id="addUser" parameterType="com.icss.bean.Add_pers">
+  	UPDATE add_pers  set p_part= #{pPart,jdbcType=VARCHAR}, p_password = #{pPassword,jdbcType=VARCHAR} where p_name= #{pName,jdbcType=VARCHAR}
+  </update>
+  <select id="getByloginid" parameterType="com.icss.bean.Add_pers" resultMap="BaseResultMap">
+  	SELECT 
+	 <include refid="Base_Column_List" />
+	 FROM add_pers  
+	where p_loginid = #{pLoginid,jdbcType=VARCHAR} and p_part = #{pPart,jdbcType=VARCHAR}
+  </select>
+  <select id="selectPwdById" parameterType="java.lang.Integer" resultType="java.lang.String"> 
+  	SELECT p_password FROM add_pers WHERE pid = #{pid,jdbcType=INTEGER}
+  </select>
+  <update id="updatePwdById" parameterType="com.icss.bean.Add_pers">
+  	UPDATE add_pers set p_password= #{pPassword,jdbcType=VARCHAR} where pid= #{pid,jdbcType=INTEGER}
+  </update>
+</mapper>
